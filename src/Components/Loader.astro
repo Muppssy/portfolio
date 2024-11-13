@@ -1,0 +1,111 @@
+---
+---
+
+<style>
+
+/* Loader click */
+
+
+/* RESET STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --panel-width: calc(100% / 6);
+  --darkblue: #02020c;
+  --white: #fff;
+  --lightgray: #fafafb;
+}
+
+/* MAIN STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.panels {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 180vw;
+  height: 100%;
+  transform: translateX(-50%) skewX(-35deg);
+  clip-path: circle(100%);
+  z-index: 101;
+  background: var(--darkblue);
+}
+
+.panels .panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--panel-width);
+  transform: scaleY(1);
+  transform-origin: top;
+   background: var(--darkblue);
+}
+
+.panels .panel:nth-child(even) {
+  transform-origin: bottom;
+  background-color: aqua;
+}
+
+.panels .panel:nth-child(2) {
+  left: calc(var(--panel-width) - 1px);
+  background-color: brown;
+}
+
+.panels .panel:nth-child(3) {
+  left: calc(calc(var(--panel-width) * 2) - 2px);
+  background-color: crimson;
+}
+
+.panels .panel:nth-child(4) {
+  left: calc(calc(var(--panel-width) * 3) - 4px);
+
+  background-color: darkslateblue;
+}
+
+.panels .panel:nth-child(5) {
+  left: calc(calc(var(--panel-width) * 4) - 5px);
+  background-color: deeppink;
+}
+
+.panels .panel:nth-child(6) {
+  left: calc(calc(var(--panel-width) * 5) - 6px);
+  background-color: deepskyblue;
+}
+
+#page-content {
+  display: flex;
+    height: auto;
+    padding: 100px 15px;
+    clip-path: circle(20%);
+    overflow-y: auto;
+    background: transparent;
+}
+
+#page-content > div {
+    text-align: center;
+    margin: auto;
+}
+
+@media (max-width: 1024px) {
+  .panels {
+      width: 200vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .panels {
+      width: 235vw;
+  }
+}
+
+</style>
+
+<ul class="panels">
+    <li class="panel"></li>
+    <li class="panel"></li>
+    <li class="panel"></li>
+    <li class="panel"></li>
+    <li class="panel"></li>
+    <li class="panel"></li>
+  </ul>
+

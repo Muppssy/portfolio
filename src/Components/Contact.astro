@@ -1,0 +1,45 @@
+---
+const { contact } = Astro.props;
+---
+
+
+<section id="contact" class="bg-gray-900">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-16 lg:py-20">
+        <div class="mb-4">
+            <div class="mb-6 max-w-3xl text-center text-white sm:text-center md:mx-auto md:mb-12">
+                <h2
+                    class="font-heading mb-4 font-bold tracking-tight text-3xl sm:text-5xl">
+                    Intéressez ?
+                </h2>
+            </div>
+        </div>
+        <div class="flex items-stretch justify-center">
+            <div class="grid md:grid-cols-2 ">
+                <div class=" contact-info h-full ">
+                    <p class="mt-3 mb-12 text-lg font-poppins text-white dark:text-slate-400">
+                        Class aptent taciti sociosqu ad
+                        litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque
+                        sagittis ante, ac tincidunt sem venenatis ut.
+                    </p>
+                    <ul class="mb-6 md:mb-0">
+                      {contact.map((contact) => (
+                        <li class="flex">
+                            <div class="flex h-10 w-10 items-center justify-center rounded bg-green-900 text-gray-50">
+                              <i class={contact.icon}></i>
+                            </div>
+                            <div class="ml-4 mb-4">
+                                <h3 class="mb-2 text-lg font-medium leading-6 text-white">{contact.name}
+                                </h3>
+                                <p class="text-white">{contact.adress}</p>
+                            </div>
+                        </li>
+                          ))}
+                    </ul>
+                </div>
+                <div class=" contact-img max-w-6xl w-full p-2 md:p-4">
+                    <img src="/img/collaboration.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>

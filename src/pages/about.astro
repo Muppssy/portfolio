@@ -1,0 +1,113 @@
+---
+import "../style/global.css";
+
+import Footer from "../Components/Footer.astro";
+import Navigation from "../Components/Navigation.astro";
+import Settings from "../Components/Settings.astro";
+import Loader from "../Components/Loader.astro";
+
+const firstColorText = [
+  "w-10 h-10 rounded-full bg-gradient-blue cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-red cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-orange cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-green cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-yellow cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-pink cursor-pointer hover:border-2 hover:border-neutral-500",
+];
+const secondColorText = [
+  "w-10 h-10 rounded-full bg-blue-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-red-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-orange-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-green-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-yellow-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-pink-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+];
+
+const fontText = [
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-roboto hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-poppins hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-raleway hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+];
+
+const fontSecondText = [
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-oxanium hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-zendots hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer  font-rakkas hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="brg">
+    <Loader />
+    <header class="page-header">
+      <Navigation />
+    </header>
+
+    <main class="page-main">
+      <Settings
+        firstColorText={firstColorText}
+        secondColorText={secondColorText}
+        fontText={fontText}
+        fontSecondText={fontSecondText}
+      />
+
+      <div>
+        <h1>page A propos</h1>
+      </div>
+
+      <Footer />
+    </main>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/96625a3117.js"
+      crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+    ></script>
+
+    <script defer src="/src/js/loader.js"></script>
+    <script defer src="/src/js/animeScroll.js"></script>
+  </body>
+</html>

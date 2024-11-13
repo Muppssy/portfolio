@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-gradient-blue {
+    background: -webkit-linear-gradient(-43deg, #3b82f6, #60a5fa, #93c5fd, #bfdbfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-red {
+    background: -webkit-linear-gradient(-43deg, #ef4444, #f87171, #fca5a5, #fecaca);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-orange {
+    background: -webkit-linear-gradient(-43deg, #f97316, #fb923c, #fdba74, #fed7aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-yellow {
+    background: -webkit-linear-gradient(-43deg, #facc15, #fde047, #fef08a, #fef9c3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-pink {
+    background: -webkit-linear-gradient(-43deg, #ec4899, #f472b6, #f9a8d4, #fed7e2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-green {
+    background: -webkit-linear-gradient(-43deg, #10b981, #34d399, #6ee7b7, #a7f3d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Dégradés de fond pour les boutons dans le menu */
+  .bg-gradient-blue {
+    background: linear-gradient(-43deg, #3b82f6, #60a5fa, #93c5fd, #bfdbfe);
+  }
+
+  .bg-gradient-red {
+    background: linear-gradient(-43deg, #ef4444, #f87171, #fca5a5, #fecaca);
+  }
+
+  .bg-gradient-orange {
+    background: linear-gradient(-43deg, #f97316, #fb923c, #fdba74, #fed7aa);
+  }
+
+  .bg-gradient-yellow {
+    background: linear-gradient(-43deg, #facc15, #fde047, #fef08a, #fef9c3);
+  }
+
+  .bg-gradient-pink {
+    background: linear-gradient(-43deg, #ec4899, #f472b6, #f9a8d4, #fed7e2);
+  }
+
+  .bg-gradient-green {
+    background: linear-gradient(-43deg, #10b981, #34d399, #6ee7b7, #a7f3d0);
+  }
+}
+
+
+
+
+/* background: -webkit-linear-gradient(43deg,rgba(0, 128, 128, 1), rgba(60, 179, 113, 1), rgba(72, 209, 204, 1),  rgba(0, 250, 154, 1)); */
+/* background: -webkit-linear-gradient(47deg, rgba(0, 128, 0, 1), rgba(0, 139, 139, 1), rgba(32, 178, 170, 1), rgba(0, 255, 127, 1)); */
+/* background: -webkit-linear-gradient(45deg, rgba(85, 107, 47, 1),rgba(34, 139, 34, 1), rgba(46, 139, 87, 1),rgba(0, 100, 0, 1)); */
+/* background: -webkit-linear-gradient(55deg, rgba(85, 107, 47, 1), rgb(61, 207, 193), rgba(46, 139, 87, 1), rgba(0, 100, 0, 1)); */
+:root {
+  --form-color1: #3F51B5;
+  --form-color2: #217eca;
+  --form-color3: #0380f4;
+  --form-color4: #18a2b4;
+
+  --text-color: #22c55e;
+}
+
+#home,
+#project,
+#expertise,
+#contact {
+  min-height: 100vh;
+  /* Garantit que chaque section prend au moins la hauteur de l'écran */
+  overflow: hidden;
+  /* Évite les débordements non désirés */
+}
+
+
+
+@keyframes animate {
+  0% {
+    transform: translateY(-1000px) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(0px) rotate(720deg);
+    opacity: 0;
+    border-radius: 10%;
+  }
+}
+
+
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  margin-top: 0.7rem;
+}
+
+
+.link-5 {
+  transition: 0.4s;
+  color: var(--text-color);
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  position: relative;
+}
+
+.link-5::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--text-color);
+  transition: all 0.4s;
+}
+
+.link-5:hover::before {
+  width: 100%;
+  left: 0;
+  border-color: var(--text-color);
+}
+
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
+
+/* button */
+
+/* From Uiverse.io by adamgiebl */
+.btn {
+  --green: #40e0d0;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.btn:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px #359e84, 0 0 9px 3px #40e0d0;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+}
+
+.btn:hover:before {
+  transform: translateX(15em);
+}
+
+
+.brg {
+  background-color: #1e293b;
+  background-image: radial-gradient(850px circle at 0% 0%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%),
+    radial-gradient(750px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%);
+  background-repeat: no-repeat;
+}
+
+.brg2 {
+  background-color: #1e293b;
+  background-image: radial-gradient(850px circle at 50% 50%,
+      hsl(218, 41%, 35%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%),
+    radial-gradient(750px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%);
+  background-repeat: no-repeat;
+}
+
+
+/* animation settings */
+/* .settings{
+    transform: translateX(90%);
+    transition: all 0.75s ease-in-out;
+  } */
+
+.settings.open {
+  transform: translateX(0);
+}
+
+.settings #settings-icon .gear>.fa-gear {
+  animation: turn infinite 2s ease-in-out;
+  transition: all 0.75s;
+}
+
+.settings.open #settings-icon .gear>.fa-gear {
+
+  transition: all 0.75s;
+  animation: turn infinite 2s ease-in-out;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+/* navigation latéral */
+.lat-menu {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(115%);
+  opacity: 0;
+}
+
+.lat-menu.visible {
+  transform: translateX(0);
+  opacity: 1;
+}

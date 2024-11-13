@@ -1,0 +1,453 @@
+---
+import "../style/global.css";
+
+import Footer from "../Components/Footer.astro";
+import Contact from "../Components/Contact.astro";
+
+import Navigation from "../Components/Navigation.astro";
+import Settings from "../Components/Settings.astro";
+import Loader from "../Components/Loader.astro";
+
+import Reservia from "../Components/articles/Reservia.astro";
+
+import * as resrevia from '../projects/project1.md';
+// const project = Object.values(await import.meta.glob('../projects/*.md', { eager: true }));
+
+const firstColorText = [
+  "w-10 h-10 rounded-full bg-gradient-blue cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-red cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-orange cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-green cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-yellow cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-pink cursor-pointer hover:border-2 hover:border-neutral-500",
+];
+const secondColorText = [
+  "w-10 h-10 rounded-full bg-blue-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-red-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-orange-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-green-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-yellow-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-pink-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+];
+
+const fontText = [
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-roboto hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-poppins hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-raleway hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+];
+
+const fontSecondText = [
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-oxanium hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-zendots hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+  {
+    class:
+      "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer  font-rakkas hover:border-2 hover:border-white",
+    font: "Aa",
+  },
+];
+
+const images = [
+  "/img/Reservia.png",
+  "/img/Ohmyfood.png",
+  "/img/LaChouetteAgence.png",
+  "/img/Aflodrive.png",
+  "/img/AfloRH.png",
+  "/img/Bookhub.png",
+];
+
+
+const contact = [
+  { name: "Email", icon: "fa-solid fa-envelope", adress:"test.emailpro@gmail.com" },
+  { name: "Linkedin", icon: "fa-brands fa-linkedin", adress:"https://www.linkedin.com/in/adrien-moncho/" },
+  { name: "Discord", icon: "fa-brands fa-discord", adress:"Muppssy#5846"  }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="brg">
+    <Loader />
+    <header class="page-header">
+      <Navigation />
+    </header>
+
+    <style>
+      .tabs {
+        background-color: white;
+      }
+
+      .tabs__head {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .tabs__toggle:nth-child(1),
+      .tabs__toggle:nth-child(2),
+      .tabs__toggle:nth-child(3),
+      .tabs__toggle:nth-child(4),
+      .tabs__toggle:nth-child(5),
+      .tabs__toggle:nth-child(6) {
+        cursor: pointer;
+      }
+
+      .tabs__toggle.is-active {
+        background-color: #0065fc;
+        color: white;
+        border-radius: 5px 0 0 5px;
+      }
+
+      .tabs__content {
+        padding: 30px;
+        display: none;
+      }
+
+      .tabs__content.is-active {
+        display: block;
+      }
+
+      .tabs__title {
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-radius: 5px;
+      }
+
+      .tabs__title h2 {
+        color: #0065fc;
+        margin-bottom: 1.5rem;
+      }
+
+      .tabs__text {
+        font-size: 14px;
+        color: #000;
+      }
+
+      #cCarousel {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      #cCarousel .arrow {
+        position: absolute;
+        top: 50%;
+        display: flex;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        z-index: 1;
+        font-size: 26px;
+        color: white;
+        background: #00000072;
+        cursor: pointer;
+      }
+
+      #cCarousel #prev {
+        left: 0px;
+      }
+
+      #cCarousel #next {
+        right: 0px;
+      }
+
+      #carousel-vp {
+        width: 870px;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+      }
+
+      @media (max-width: 770px) {
+        #carousel-vp {
+          width: 510px;
+        }
+      }
+
+      @media (max-width: 510px) {
+        #carousel-vp {
+          width: 250px;
+        }
+      }
+
+      #cCarousel #cCarousel-inner {
+        display: flex;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        gap: 10px;
+        left: 0px;
+      }
+
+      .cCarousel-item {
+        width: 350px;
+        height: 350px;
+        border: 2px solid white;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+
+    <main class="page-main">
+      <Settings
+        firstColorText={firstColorText}
+        secondColorText={secondColorText}
+        fontText={fontText}
+        fontSecondText={fontSecondText}
+      />
+
+      <section>
+        <div id="cCarousel">
+          <div class="arrow" id="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <div class="arrow" id="next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+          <div id="carousel-vp">
+            <div id="cCarousel-inner">
+              {
+                images.map((image) => (
+                  <article class=" tabs is-active cCarousel-item cursor-pointer">
+                    <img
+                      src={image}
+                      alt="Moon"
+                    />
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="tabs__body max-w-7xl mx-auto">
+        <div class="tabs__content is-active">
+          <div class="tabs__title">
+
+            <Reservia/>
+
+          </div>
+        </div>
+        <div class="tabs__content">
+          <div class="tabs__title">
+            <h2>Project2</h2>
+            <p class="tabs__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium qui hic repellat enim dolorum corrupti fugiat a natus
+              facere, provident voluptate! Quos, nobis. Animi sequi nemo, ab
+              vitae repellendus cum soluta, commodi quas, amet at voluptas iste
+              autem odio distinctio ea dolorum corrupti? Excepturi adipisci
+              recusandae, placeat beatae nihil praesentium.
+            </p>
+          </div>
+        </div>
+        <div class="tabs__content">
+          <div class="tabs__title">
+            <h2>Project3</h2>
+            <p class="tabs__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium qui hic repellat enim dolorum corrupti fugiat a natus
+              facere, provident voluptate! Quos, nobis. Animi sequi nemo, ab
+              vitae repellendus cum soluta, commodi quas, amet at voluptas iste
+              autem odio distinctio ea dolorum corrupti? Excepturi adipisci
+              recusandae, placeat beatae nihil praesentium.
+            </p>
+          </div>
+        </div>
+
+        <div class="tabs__content">
+          <div class="tabs__title">
+            <h2>Project4</h2>
+            <p class="tabs__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium qui hic repellat enim dolorum corrupti fugiat a natus
+              facere, provident voluptate! Quos, nobis. Animi sequi nemo, ab
+              vitae repellendus cum soluta, commodi quas, amet at voluptas iste
+              autem odio distinctio ea dolorum corrupti? Excepturi adipisci
+              recusandae, placeat beatae nihil praesentium.
+            </p>
+          </div>
+        </div>
+        <div class="tabs__content">
+          <div class="tabs__title">
+            <h2>Project5</h2>
+            <p class="tabs__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium qui hic repellat enim dolorum corrupti fugiat a natus
+              facere, provident voluptate! Quos, nobis. Animi sequi nemo, ab
+              vitae repellendus cum soluta, commodi quas, amet at voluptas iste
+              autem odio distinctio ea dolorum corrupti? Excepturi adipisci
+              recusandae, placeat beatae nihil praesentium.
+            </p>
+          </div>
+        </div>
+        <div class="tabs__content">
+          <div class="tabs__title">
+            <h2>Project6</h2>
+            <p class="tabs__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Accusantium qui hic repellat enim dolorum corrupti fugiat a natus
+              facere, provident voluptate! Quos, nobis. Animi sequi nemo, ab
+              vitae repellendus cum soluta, commodi quas, amet at voluptas iste
+              autem odio distinctio ea dolorum corrupti? Excepturi adipisci
+              recusandae, placeat beatae nihil praesentium.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   
+
+    <Contact contact={contact}/>
+    <Footer/>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/96625a3117.js"
+      crossorigin="anonymous"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+
+    <script defer src="/src/js/loader.js"></script>
+    <script defer src="/src/js/animeScroll.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const prev = document.querySelector("#prev");
+        const next = document.querySelector("#next");
+
+        let carouselVp = document.querySelector("#carousel-vp");
+
+        let cCarouselInner = document.querySelector("#cCarousel-inner");
+        let carouselInnerWidth = cCarouselInner.getBoundingClientRect().width;
+
+        let leftValue = 0;
+
+        // Variable used to set the carousel movement value (card's width + gap)
+        const totalMovementSize =
+          parseFloat(
+            document.querySelector(".cCarousel-item").getBoundingClientRect()
+              .width,
+            30
+          ) +
+          parseFloat(
+            window.getComputedStyle(cCarouselInner).getPropertyValue("gap"),
+            30
+          );
+
+        prev.addEventListener("click", () => {
+          if (!leftValue == 0) {
+            leftValue -= -totalMovementSize;
+            cCarouselInner.style.left = leftValue + "px";
+          }
+        });
+
+        next.addEventListener("click", () => {
+          const carouselVpWidth = carouselVp.getBoundingClientRect().width;
+          if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth) {
+            leftValue -= totalMovementSize;
+            cCarouselInner.style.left = leftValue + "px";
+          }
+        });
+
+        const mediaQuery510 = window.matchMedia("(max-width: 510px)");
+        const mediaQuery770 = window.matchMedia("(max-width: 770px)");
+
+        mediaQuery510.addEventListener("change", mediaManagement);
+        mediaQuery770.addEventListener("change", mediaManagement);
+
+        let oldViewportWidth = window.innerWidth;
+
+        function mediaManagement() {
+          const newViewportWidth = window.innerWidth;
+
+          if (
+            leftValue <= -totalMovementSize &&
+            oldViewportWidth < newViewportWidth
+          ) {
+            leftValue += totalMovementSize;
+            cCarouselInner.style.left = leftValue + "px";
+            oldViewportWidth = newViewportWidth;
+          } else if (
+            leftValue <= -totalMovementSize &&
+            oldViewportWidth > newViewportWidth
+          ) {
+            leftValue -= totalMovementSize;
+            cCarouselInner.style.left = leftValue + "px";
+            oldViewportWidth = newViewportWidth;
+          }
+        }
+
+        let tabs = document.querySelectorAll(".tabs");
+        let content = document.querySelectorAll(".tabs__content");
+
+        tabs.forEach((tab, index) => {
+          tab.addEventListener("click", () => {
+            content.forEach((content) => {
+              content.classList.remove("is-active");
+            });
+
+            tabs.forEach((tabs) => {
+              tabs.classList.remove("is-active");
+            });
+
+            content[index].classList.add("is-active");
+            tabs[index].classList.add("is-active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

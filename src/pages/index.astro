@@ -1,16 +1,325 @@
 ---
+import "../style/global.css";
+import "../style/swiper.css";
+
+import Navigation from '../Components/Navigation.astro';
+import Footer from '../Components/Footer.astro';
+import Settings from '../Components/Settings.astro';
+import SmallNav from '../Components/SmallNav.astro';
+import Loader from "../Components/Loader.astro";
+import Contact from "../Components/Contact.astro";
+
+
+
+const pageTitle = "Adrien Moncho";
+
+const firstColorText = [
+  "w-10 h-10 rounded-full bg-gradient-blue cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-red cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-orange cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-green cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-yellow cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-gradient-pink cursor-pointer hover:border-2 hover:border-neutral-500"
+];
+const secondColorText = [
+  "w-10 h-10 rounded-full bg-blue-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-red-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-orange-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-green-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-yellow-500 cursor-pointer hover:border-2 hover:border-neutral-500",
+  "w-10 h-10 rounded-full bg-pink-500 cursor-pointer hover:border-2 hover:border-neutral-500"
+];
+
+const fontText = [
+  { class: "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-roboto hover:border-2 hover:border-white", font: "Aa" },
+  { class: "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-poppins hover:border-2 hover:border-white", font: "Aa" },
+  { class: "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-raleway hover:border-2 hover:border-white", font: "Aa" }
+
+];
+
+const fontSecondText = [
+  { class: "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-oxanium hover:border-2 hover:border-white", font: "Aa" },
+  { class: "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer font-zendots hover:border-2 hover:border-white", font: "Aa" },
+  { class: "w-10 h-10 flex items-center justify-center text-white text-center font-bold bg-gray-500 rounded-full cursor-pointer  font-rakkas hover:border-2 hover:border-white", font: "Aa" }
+
+];
+
+
+const images = [
+  "/img/Reservia.png",
+  "/img/Ohmyfood.png",
+  "/img/LaChouetteAgence.png",
+  "/img/Aflodrive.png",
+  "/img/AfloRH.png",
+  "/img/Bookhub.png",
+];
+
+const devs = [
+  { name: "FullStack", icon: "fa-solid fa-code fa-lg text-red-500" },
+  { name: "Passion", icon: "fa-solid fa-computer fa-lg text-blue-500" },
+  { name: "Creative", icon: "fa-solid fa-pencil fa-lg text-green-500" }
+];
+
+const contact = [
+  { name: "Email", icon: "fa-solid fa-envelope", adress:"test.emailpro@gmail.com" },
+  { name: "Linkedin", icon: "fa-brands fa-linkedin", adress:"https://www.linkedin.com/in/adrien-moncho/" },
+  { name: "Discord", icon: "fa-brands fa-discord", adress:"Muppssy#5846"  }
+];
+
+
+const fronts = [
+  { src: "/technos/html5.png", name: "HTML5" },
+  { src: "/technos/css3.png", name: "CSS3" },
+  { src: "/technos/js.png", name: "JavaScript" },
+  { src: "/technos/jquery.png", name: "jQuery" },
+  { src: "/technos/sass.png", name: "Sass" },
+  { src: "/technos/bootstrap.png", name: "Bootstrap" },
+  { src: "/technos/tailwind.png", name: "Tailwind" },
+  { src: "/technos/astro.png", name: "Astro Js" }
+];
+
+const backs = [
+ {src:"/technos/php.webp", name: "Php"},
+ {src:"/technos/symfony.png", name: "Symfony"},
+ {src:"/technos/mysql.png", name: " mysql"},
+ {src:"/technos/twig.png", name: "Twig"},
+ {src:"/technos/elasticsearch.png", name: "Elasticsearch"}
+];
+
+const others = [
+{src:"/technos/docker.png", name: "Docker"},
+{src:"/technos/git.webp", name: " Git"},
+ {src:"/technos/trello.webp", name: "Trello"},
+ {src:"/technos/figma.png", name: "Figma"},
+ {src:"/technos/illustrator.png", name: " Illustrator"},
+ {src:"/technos/ps.png", name: " Photoshop"},
+ {src:"/technos/word.png", name: " Word"},
+ {src:"/technos/excel.png", name: " Excel"},
+ {src:"/technos/powerpoint.png", name: "Powerpoint"}
+];
+
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rakkas&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Zen+Dots&display=swap" rel="stylesheet">
+ 
+
+    <link
+      rel="stylesheet"
+      href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+
+  <body class="brg w-auto">
+
+
+ 
+
+    <main id="page-content" class=" relative w-full">
+
+      <Settings firstColorText={firstColorText} secondColorText={secondColorText} fontText={fontText} fontSecondText={fontSecondText} />
+      <SmallNav/>
+
+      <section id="home" class="relative">
+        <Navigation/>
+        <div class="dark:bg-gray-800 sca  flex relative z-20 items-center overflow-hidden">
+            <div class="container mx-auto px-6 flex flex-col-reverse sm:flex sm:flex-row relative py-6">
+                <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
+                    <span class=" hidden w-20 h-2 bg-gray-800 dark:bg-white mb-12">
+                    </span>
+
+                    <h1 class="text-4xl font-sans my-6 font-extrabold border- tracking-tight text-gradient sm:mb-10 sm:text-5xl md:text-3xl lg:text-4xl xl:text-6xl">
+                      <span class="ftext text-gradient-green block text-gray-300 xl:inline">Useful Tools to</span>
+                      <span class="stext block text-white xl:inline">Help You Build Faster.</span>
+                    </h1>
+
+                    <p class="text-base lg:text-xl text-gray-300 dark:text-white">
+                        Dimension of reality that makes change possible and understandable. An indefinite and homogeneous
+                        environment in which natural events and human existence take place.
+                        Dimension of reality that makes change possible and understandable. An indefinite and homogeneous
+                        environment in which natural events and human existence take place.
+                    </p>
+                    <div class="flex flex-col  mt-8 w-full lg:flex lg:flex-row lg:gap-8">
+                      <button class="magneto w-full mb-6 btn">
+                        <a href="#"class="text"> Mon CV</a>
+                      </button>
+
+                      <button class="magneto w-full mb-6 btn">
+                        <a href="/project/"class="text">Mes projets</a>
+                      </button>
+
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                  <img src="https://loremflickr.com/g/600/600/girl">
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class=" relative overflow-hidden bg-gray-900  py-8 sm:py-16">
+      <div class="mx-auto max-w-7xl min-h-[80vh] px-6 lg:px-8">
+        <div class="mx-auto grid grid-cols-1 gap-y-12 my-16 lg:grid-cols-2 lg:gap-x-12 lg:mx-0 lg:max-w-none">
+          <!-- Section texte -->
+          <div class="">
+            <div class="mb-4 lg:mb-8 lg:max-w-lg">
+              <h2 class="title_project mt-2 text-4xl font-roboto font-bold tracking-tight text-white sm:text-4xl uppercase">
+                Projet
+              </h2>
+              <p class=" subtext_project mt-6 font-poppins text-lg leading-8 text-gray-200">
+                Tout au long de mon parcours, j'ai acquis des compétences dans de nombreux domaines, 
+                élargissant ainsi mes connaissances et renforçant ma polyvalence. 
+                Découvrez les projets que j'ai réalisés.
+              </p>
+              <dl class="mt-10 space-y-8 text-base leading-7 text-gray-200">
+                <div class="front_project relative pl-9 font-poppins">
+                  <dt class="inline font-semibold text-green-500">
+                    <i class="fa-solid fa-laptop-code absolute left-1 top-1 h-5 w-5 text-green-500"></i>
+                    Front End
+                  </dt>
+                  <dd class="inline font-light">
+                    Conception et réalisation d'interfaces utilisateur intuitives et efficaces.
+                  </dd>
+                </div>
+                <div class="back_project relative pl-9 font-poppins">
+                  <dt class="inline font-semibold text-red-500">
+                    <i class="fa-solid fa-gears absolute left-1 top-1 h-5 w-5 text-red-500"></i>
+                    Back End
+                  </dt>
+                  <dd class="inline font-light">
+                    Développement de la partie back-end d'une application, incluant la gestion des bases de données, des API et de la logique métier.
+                  </dd>
+                </div>
+                <div class="bdd_project relative pl-9 font-poppins">
+                  <dt class="inline font-semibold text-blue-500">
+                    <i class="fa-solid fa-database absolute left-1 top-1 h-5 w-5 text-blue-500"></i>
+                    Base de données
+                  </dt>
+                  <dd class="inline font-light">
+                    Conception et mise en place de bases de données, incluant la modélisation des données et l'optimisation des requêtes.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <button
+            class="magneto btn">
+            <a href="/project/" class="text">
+            Voir les projets
+            </a>
+            
+          </button>
+          </div>
+    
+          <!-- Swiper Container -->
+          <div class="slide_project w-full h-auto">
+            <swiper-container
+              class="mySwiper"
+              pagination="true"
+              pagination-clickable="false"
+              navigation="false"
+              space-between="50"
+              centered-slides="true"
+              autoplay-delay="4000"
+              autoplay-disable-on-interaction="false"
+            >
+              {
+                images.map((image) => (
+                  <swiper-slide key={image}>
+                    <img src={image} alt="Image Slide" class="w-full h-auto object-cover" />
+                  </swiper-slide>
+                ))
+              }
+            </swiper-container>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="expertise" class="brg2 relative overflow-hidden">
+      <div class="relative w-full h-auto min-h-screen py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+          <h2 class="mb-4 text-4xl font-roboto tracking-tight font-extrabold text-white dark:text-gray-900">Mon expertise</h2>
+        </div>
+        
+        <!-- Conteneur des cartes en position absolue -->
+        <div class="relative h-full space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+          <!-- Carte Front End -->
+          <div class=" front-expert flex flex-col p-6 mx-auto max-w-lg text-center text-white bg-gray-900 rounded-lg border border-gray-800 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <h3 class="mb-4 text-2xl font-poppins font-semibold">Front End</h3>
+            <div class="flex justify-center gap-6 items-center flex-wrap">
+              {fronts.map((front) => (
+                <div class="card flex flex-col items-center">
+                  <img src={front.src} alt={front.name} class="w-16 h-16" />
+                  <div class="card-content bg-gray-700 w-full rounded-b-md">
+                    <p class="text-white font-bold text-center">{front.name}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+    
+          <!-- Carte Back End -->
+          <div class="back-expert flex flex-col p-6 mx-auto max-w-lg text-center text-white bg-gray-900 rounded-lg border border-gray-800 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <h3 class="mb-4 text-2xl font-poppins font-semibold">Back End</h3>
+            <div class="flex justify-center gap-6 items-center flex-wrap">
+              {backs.map((back) => (
+                <div class="card flex flex-col items-center">
+                  <img src={back.src} alt={back.name} class="w-16 h-16" />
+                  <div class="card-content bg-gray-700 w-full rounded-b-md">
+                    <p class="text-white font-bold text-center">{back.name}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+    
+          <!-- Carte Autre -->
+          <div class="other-expert flex flex-col p-6 mx-auto max-w-lg text-center text-white bg-gray-900 rounded-lg border border-gray-800 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            <h3 class="mb-4 text-2xl font-poppins font-semibold">Autre</h3>
+            <div class="flex justify-center gap-6 items-center flex-wrap">
+              {others.map((other) => (
+                <div class="card flex flex-col items-center">
+                  <img src={other.src} alt={other.name} class="w-16 h-16" />
+                  <div class="card-content bg-gray-700 w-full rounded-b-md">
+                    <p class="text-white font-bold text-center">{other.name}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    <Contact contact={contact}/>
+
+    <Footer />
+</main>
+    
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+<script defer src="https://kit.fontawesome.com/96625a3117.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+	
+
+    <!-- Script JavaScript -->
+   
+     <script defer src="/src/js/animeScroll.js"></script>
+     <script defer src="/src/js/magnetButton.js "></script>
+  </body>
 </html>

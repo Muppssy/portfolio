@@ -1,0 +1,81 @@
+---
+const { firstColorText, secondColorText, fontText, fontSecondText } = Astro.props;
+---
+
+<div class=" settings w-[280px]   md:w-[380px] font h-auto  flex justify-between fixed right-9 top-20 transform translate-x-[92%] transition-transform duration-700 ease-in-out sm:right-5 sm:top-20 sm:translate-x-[92%] z-50 ">
+       
+    <div id="settings-icon" class="flex flex-col items-center space-y-2 pt-2 mr-4 w-[60px] h-[50vh]">
+
+      <div id="gear-button" class="gear-button w-10 h-10 mr-0 sm:-mr-2/5 md:mr-8 text-white gear rounded-full flex justify-center flex-col text-center bg-gray-500 mt-[-7px] cursor-pointer hover:border-2 hover:border-white">
+        <i class="fa-solid fa-gear"></i>
+      </div>
+
+      <div class="w-10 h-10 text-white rounded-full mr-0 sm:-mr-2/5 md:mr-8 flex justify-center flex-col text-center bg-gray-500 mt-[45px] cursor-pointer hover:border-2 hover:border-white">
+        <i class="fa-regular fa-moon fa-lg"></i>
+      </div>
+  </div>
+
+
+  <div class="w-full bg-gray-900 h-auto  rounded-lg px-4 pt-6">
+    <h4 class="text-xl font-poppins uppercase  text-white mb-6  "> First colors </h4>
+    <div class="flex flex-wrap justify-between gap-2">
+
+      {
+        firstColorText.map((firstColorText) => (
+        <div class={firstColorText}></div>
+        ))
+      }
+      
+      <div class="resetColor1 w-10 h-10 text-white rounded-full flex justify-center flex-col text-center bg-gray-700 cursor-pointer hover:border-2 hover:border-white">
+        <i class=" fa-solid fa-ban"></i>
+      </div>
+
+    </div>
+    
+    <h4 class="text-xl font-poppins font-asset uppercase text-white my-6 "> Second colors </h4>
+    <div class="flex flex-wrap justify-between gap-2">
+      {
+        secondColorText.map((secondColorText) => (
+        <div class={secondColorText}></div>
+        ))
+      }
+      <div class="resetColor2 w-10 h-10 text-white rounded-full flex justify-center flex-col text-center bg-gray-700 cursor-pointer hover:border-2 hover:border-white">
+        <i class="fa-solid fa-ban"></i>
+      </div>
+
+    </div>
+
+
+    <h4 class="text-xl font-poppins uppercase text-white my-6 "> Fonts </h4>
+    <div class="flex flex-wrap justify-between items-center gap-2">
+   
+      <div class="flex flex-wrap justify-between gap-2">
+        {
+          fontText.map((fontItem) => (
+            <div class={fontItem.class}>{fontItem.font}</div>
+          ))
+        }
+      </div>
+      
+   
+
+    </div>
+
+    <h4 class="text-xl font-poppins uppercase text-white my-6 "> Second Fonts </h4>
+    <div class="flex flex-wrap justify-between items-center gap-2 pb-6">
+   
+      <div class="flex flex-wrap justify-between gap-2 ">
+        {
+          fontSecondText.map((fontSecondItem) => (
+            <div class={fontSecondItem.class}>{fontSecondItem.font}</div>
+          ))
+        }
+      </div>
+      
+    
+
+    </div>
+  </div>
+    
+
+</div>

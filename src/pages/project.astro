@@ -9,6 +9,7 @@ import Settings from "../Components/Settings.astro";
 import Loader from "../Components/Loader.astro";
 
 import Reservia from "../Components/articles/Reservia.astro";
+import Ohmyfood from "../Components/articles/Ohmyfood.astro";
 
 import * as resrevia from '../projects/project1.md';
 // const project = Object.values(await import.meta.glob('../projects/*.md', { eager: true }));
@@ -268,15 +269,8 @@ const contact = [
         </div>
         <div class="tabs__content">
           <div class="tabs__title">
-            <h2>Project2</h2>
-            <p class="tabs__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium qui hic repellat enim dolorum corrupti fugiat a natus
-              facere, provident voluptate! Quos, nobis. Animi sequi nemo, ab
-              vitae repellendus cum soluta, commodi quas, amet at voluptas iste
-              autem odio distinctio ea dolorum corrupti? Excepturi adipisci
-              recusandae, placeat beatae nihil praesentium.
-            </p>
+            <Ohmyfood/>
+
           </div>
         </div>
         <div class="tabs__content">

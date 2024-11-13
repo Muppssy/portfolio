@@ -5,25 +5,22 @@ import * as resrevia from "../../projects/project1.md";
 <article class="relative text-white">
   <div class="">
     <div
-      class="mt-3 bg-gray-600 rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal"
+      class="mt-3 bg-gray-600 text-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal"
     >
       <div class="px-10 py-10">
-        <h1 class="text-gray-900 font-bold text-4xl">
+        <h1 class="font-bold text-4xl">
           {resrevia.frontmatter.title}
         </h1>
         <div class="py-5 text-sm font-regular text-gray-900 flex">
-          <a
-            href="#"
-            class="flex flex-row items-center hover:text-indigo-600 mr-3"
-          >
-          <i class="fa-solid fa-user"></i>
+          <a href="#" class="flex flex-row items-center text-gray-200 mr-3">
+            <i class="fa-solid fa-user"></i>
 
             <span class="ml-1"> {resrevia.frontmatter.name}</span></a
           >
 
-          <span class="ml-3 flex flex-row items-center">
+          <span class="ml-3 text-white flex flex-row items-center">
             <i class="fa-regular fa-calendar-days"></i>
-            
+
             <span class="ml-1"> {resrevia.frontmatter.date}</span>
           </span>
         </div>
@@ -41,77 +38,50 @@ import * as resrevia from "../../projects/project1.md";
         </h3>
 
         <p class="text-base leading-8 my-5">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
+          {resrevia.frontmatter.features}
 
-        <h3 class="text-2xl font-bold my-5">
-          #2. {resrevia.frontmatter.title2}
-        </h3>
-        <p class="text-base leading-8 my-5">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
+          <h3 class="text-2xl font-bold my-5">
+            #2. {resrevia.frontmatter.title2}
+          </h3>
+          <p class="text-base leading-8 my-5">
+            L'intégration doit être réalisée en HTML5 et CSS3, sans
+            l’utilisation de frameworks tels que Bootstrap. Le champ de
+            recherche doit être un champ de saisie modifiable, mais sans
+            fonctionnalité de recherche implémentée. Chaque carte de type
+            hébergement ou activité doit être cliquable dans son ensemble, avec
+            des liens pour l'instant inactifs. Les filtres, bien que non
+            fonctionnels, doivent afficher un style différent au survol. Dans le
+            menu, les liens "Hébergements" et "Activités" devront agir comme des
+            ancres et conduire aux sections correspondantes de la page. Bien
+            qu’aucune maquette pour les résolutions tablette ne soit fournie,
+            l'intégration doit en tenir compte pour assurer une bonne
+            adaptation. Les images doivent être optimisées pour un rendu visuel
+            attrayant, tout en minimisant le temps de chargement de la page. Le
+            code doit utiliser des balises sémantiques et être exempt de toute
+            erreur ou alerte lors de la validation W3C pour HTML et CSS. Le site
+            doit être compatible avec les versions les plus récentes de Chrome
+            et Firefox. Le HTML et le CSS doivent être séparés, et le dossier
+            d'intégration doit être structuré de manière organisée. Enfin, le
+            code doit être versionné avec Git et hébergé dans un dépôt distant,
+            sur Github ou Gitlab.
+          </p>
 
-        <h3 class="text-2xl font-bold my-5">
-          #3. {resrevia.frontmatter.title3}
-        </h3>
-        <p class="text-base leading-8 my-5">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
+          <h3 class="text-2xl font-bold my-5">
+            #3. {resrevia.frontmatter.title3}
+          </h3>
+          <p class="text-base leading-8 my-5">
+            L'integration est faite sur l'éditeur Visual Studio Code avec les plugins Live server  {resrevia.frontmatter.note}
+          </p>
+          
 
-        <a
-          href="#"
-          class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out"
-        >
-          #Election
-        </a>,
-        <a
-          href="#"
-          class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out"
-        >
-          #people
-        </a>,
-        <a
-          href="#"
-          class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out"
-        >
-          #Election2020
-        </a>,
-        <a
-          href="#"
-          class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out"
-        >
-          #trump
-        </a>,
-        <a
-          href="#"
-          class="text-xs text-indigo-600 font-medium hover:text-gray-900 transition duration-500 ease-in-out"
-        >
-          #Joe
-        </a>
+          <div class="flex flex-col text-center  mt-8 w-full lg:flex lg:flex-row lg:gap-8">
+            
+              <a class=" w-full mb-6 btn" href="https://github.com/Muppssy/Adrien_Moncho_2_30062021"class="text"> Github</a>
+          
+              <a class=" w-full mb-6 btn" href="https://muppssy.github.io/Adrien_Moncho_2_30062021/"class="text">Voir projets</a>
+
+          </div>
+        </p>
       </div>
     </div>
   </div>
